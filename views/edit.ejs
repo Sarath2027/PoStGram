@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <style>
+        *{
+            text-align: center;
+            font-size: 19px;
+        }
+        button{
+            margin-top:10px;
+            padding:5px;
+            border:1px solid black;
+            border-radius: 10px;
+        }
+        h2{
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Edit Your Post</h2>
+    <p style="text-align: center;">Username : <%=post.username%></p>
+    <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+        <textarea rows="7" cols="25" name="content" style="text-align: left;"><%=post.content%></textarea><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
